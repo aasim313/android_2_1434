@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public static void changeFragment(View view,User user){
         // Получаем хостинговую активность (в нашем случае MainActivity)
         FragmentActivity activity = (FragmentActivity) view.getContext();

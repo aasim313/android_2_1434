@@ -26,10 +26,21 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         //super.onBackPressed();
         Toast.makeText(MainActivity.this,"Сейчас будет выход",Toast.LENGTH_SHORT).show();
+
+        // Создаём менеджер фрагментов
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        // создаём фрагмент
+        Fragment fragment = new UserListFragment();
+        // R.id.fragmentContainer - это FrameLayout из файла activity_main.xml
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+
     }
+
+
     public static void changeFragment(View view,User user){
         // Получаем хостинговую активность (в нашем случае MainActivity)
         FragmentActivity activity = (FragmentActivity) view.getContext();
+
         // Создаём менеджер фрагментов
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
         // создаём фрагмент

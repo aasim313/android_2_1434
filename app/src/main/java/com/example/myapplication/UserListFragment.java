@@ -34,8 +34,11 @@ public class UserListFragment extends Fragment {
     private class UserHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView userItemTextView;
         private User itemUser;
+
+        // метод UserHolder (конструктор)
         public UserHolder(LayoutInflater inflater, ViewGroup viewGroup){
             super(inflater.inflate(R.layout.list_item_user,viewGroup,false));
+
             // itemView - это элемент списка
             userItemTextView = itemView.findViewById(R.id.userItem);
             itemView.setOnClickListener(this);
@@ -46,7 +49,7 @@ public class UserListFragment extends Fragment {
             userItemTextView.setText(userName); // Устанавливаем текст элемента списка
         }
 
-        @Override
+        @Override // обраотка нажания
         public void onClick(View view) {
             MainActivity.changeFragment(view, itemUser);
         }

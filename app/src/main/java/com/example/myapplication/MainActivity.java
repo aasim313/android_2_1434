@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         // R.id.fragmentContainer - это FrameLayout из файла activity_main.xml
         fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
     }
-    @Override
+
+    @Override  // по кнопке нНАЗАД возвращаемся в полный список
+
     public void onBackPressed() {
         //super.onBackPressed();
         Toast.makeText(MainActivity.this,"Сейчас будет выход",Toast.LENGTH_SHORT).show();

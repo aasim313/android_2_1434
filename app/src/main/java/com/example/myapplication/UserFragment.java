@@ -13,9 +13,8 @@ public class UserFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        user = new User();
-        user.setUserName("Ivan");
-        user.setUserLastName("Ivanov");
+        Bundle bundle = getArguments();
+        user = (User) bundle.getSerializable("user"); // Принимаем объект user
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
